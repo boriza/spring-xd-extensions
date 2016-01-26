@@ -1,4 +1,4 @@
-Redis Store Sink Module
+File Source with Redis Store Filter Module
 =======================
 
 This is an example of a custom sink module using the Spring Integration Redis outbound channel adapter to save messages to a Redis collection. This is built and packaged for installation in a Spring XD runtime environment using maven. The project includes unit and integration tests and illustrates how to define module options using simple property descriptors.
@@ -27,37 +27,11 @@ The project's [build.gradle][] applies the `spring-xd-module` plugin, providing 
 
 ## Using the Custom Module
 
-The jar will be in `[project-build-dir]/redis-store-sink-1.0.0.BUILD-SNAPSHOT.jar`. To install and register the module to your Spring XD distribution, use the `module upload` Spring XD shell command. Start Spring XD and the shell:
-
-
-	_____                           __   _______
-	/  ___|          (-)             \ \ / /  _  \
-	\ `--. _ __  _ __ _ _ __   __ _   \ V /| | | |
- 	`--. \ '_ \| '__| | '_ \ / _` |   / ^ \| | | |
-	/\__/ / |_) | |  | | | | | (_| | / / \ \ |/ /
-	\____/| .__/|_|  |_|_| |_|\__, | \/   \/___/
-    	  | |                  __/ |
-      	|_|                 |___/
-	eXtreme Data
-	1.1.0.BUILD-SNAPSHOT | Admin Server Target: http://localhost:9393
-	Welcome to the Spring XD shell. For assistance hit TAB or type "help".
-	xd:>module upload --file [path-to]/redis-store-sink-1.0.0.BUILD-SNAPSHOT.jar --name redis-store --type sink
-	Successfully uploaded module 'sink:redis-store'
-	xd:>
 
 You can also get information about the available module options:
 
 	xd:>module info sink:redis-store
 	
-	Information about sink module 'redis-store':
-
-  	Option Name  Description                                            Default            Type
-  	-----------  -----------------------------------------------------  -----------------  --------
-  	host         the host name for the Redis store                      localhost          String
-  	port         the port for the Redis store                           6379               Integer
-  	collection   the name of the list                                   ${xd.stream.name}  String
-  	inputType    how this module should interpret messages it consumes  <none>             MimeType
-
 
 
 Now create and deploy a stream:
@@ -73,10 +47,3 @@ You can verify the data is stored using the Redis CLI:
 	$ redis cli
 	127.0.0.1:6379> lrange redisTest 0 -1
 	1) "hello"
-
-[pom]: https://github.com/spring-projects/spring-xd-samples/blob/master/redis-store-sink/pom.xml
-[build.gradle]: https://github.com/spring-projects/spring-xd-samples/blob/master/redis-store-sink/build.gradle
-[Spring Boot Maven Plugin]: http://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html
-[Spring Boot Gradle Plugin]: http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/html/build-tool-plugins-gradle-plugin.html
-[propdeps plugin]: https://github.com/spring-projects/gradle-plugins/tree/master/propdeps-plugin
-[Modules]: http://docs.spring.io/spring-xd/docs/current/reference/html/#modules
