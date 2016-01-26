@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: org.springframework.xd.samples.SourceModuleIntegrationTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 14.616 sec <<< FAILURE! - in org.springframework.xd.samples.SourceModuleIntegrationTest
+test(org.springframework.xd.samples.SourceModuleIntegrationTest)  Time elapsed: 6.203 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at org.springframework.xd.samples.SourceModuleIntegrationTest.test(SourceModuleIntegrationTest.java:42)
+
