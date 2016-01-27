@@ -16,9 +16,6 @@
 		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
 		">
 
-	<int:channel id="fileInChannel"/>          
-	<int:logging-channel-adapter channel="fileInChannel"/>
-	
 	<bean id="redisConnectionFactory" 
 	      class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
 	    <property name="hostName" value="${host}" />
@@ -35,13 +32,16 @@
 	</bean>
 	
 	<int-file:inbound-channel-adapter id="fileInAdapter"
-									 channel="fileInChannel"
+									 channel="output"
 									 directory="file:${dir}" 
 									 prevent-duplicates="true"  
 									 filter="acceptOnceFilter"
+									 auto-startup="false" 
 									   >
 		<int:poller default="true" fixed-delay="1000"/>
 		
 	</int-file:inbound-channel-adapter>
-			
+
+	<int:channel id="output"/>          
+
 </beans>

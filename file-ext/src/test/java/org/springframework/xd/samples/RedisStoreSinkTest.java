@@ -43,7 +43,7 @@ public class RedisStoreSinkTest {
 	ConfigurableApplicationContext applicationContext;
 
 	@Autowired
-	@Qualifier("fileInChannel")
+	@Qualifier("output")
 	MessageChannel fileInChannel;
 	
 	@Autowired
@@ -52,7 +52,7 @@ public class RedisStoreSinkTest {
 	@Test
 	public void test() {
 		applicationContext.start();
-		fileInChannel.send(new GenericMessage<String>("hello"));
+		//fileInChannel.send(new GenericMessage<String>("hello"));
 		//assertEquals("hello", redisTemplate.boundListOps("mycollection").leftPop(5, TimeUnit.SECONDS));
 	}
 
