@@ -35,9 +35,10 @@
 	</bean>
 	
 	<int-file:inbound-channel-adapter id="fileInAdapter"
-									   directory="file:${dir}" 
-									   prevent-duplicates="true"  
-									   filter="acceptOnceFilter"
+									 channel="fileInChannel"
+									 directory="file:${dir}" 
+									 prevent-duplicates="true"  
+									 filter="acceptOnceFilter"
 									   >
 		<int:poller default="true" fixed-delay="1000"/>
 		

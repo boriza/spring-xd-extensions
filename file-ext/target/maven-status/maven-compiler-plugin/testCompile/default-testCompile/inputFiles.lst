@@ -1,2 +1,2 @@
-/Users/boriskravtsov/Google Drive/Dev/spring-xd-samples/file-ext/src/test/java/org/springframework/xd/samples/RedisStoreSinkTest.java
-/Users/boriskravtsov/Google Drive/Dev/spring-xd-samples/file-ext/src/test/java/org/springframework/xd/samples/ModuleOptionsTest.java
+/Users/boriskravtsov/Google Drive/Dev/spring-xd-extensions/file-ext/src/test/java/org/springframework/xd/samples/ModuleOptionsTest.java
+/Users/boriskravtsov/Google Drive/Dev/spring-xd-extensions/file-ext/src/test/java/org/springframework/xd/samples/RedisStoreSinkTest.java
