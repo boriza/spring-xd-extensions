@@ -32,7 +32,6 @@
 	</bean>
 	
 	<int-file:inbound-channel-adapter id="fileInAdapter"
-									 channel="output"
 									 directory="file:${dir}" 
 									 prevent-duplicates="true"  
 									 filter="acceptOnceFilter"
