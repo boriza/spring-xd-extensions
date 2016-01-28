@@ -60,7 +60,7 @@ public class ModuleOptionsTest {
 				assertEquals("6379", moduleOption.getDefaultValue());
 			}
 			if (moduleOption.getName().equals("pattern")) {
-				assertEquals("*.*", moduleOption.getDefaultValue());
+				assertEquals("*.json", moduleOption.getDefaultValue());
 			}
 			if (moduleOption.getName().equals("mode")) {
 				assertEquals("line", moduleOption.getDefaultValue());
