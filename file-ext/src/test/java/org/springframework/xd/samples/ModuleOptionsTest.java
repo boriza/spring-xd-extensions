@@ -47,7 +47,7 @@ public class ModuleOptionsTest {
 		assertThat(
 				metadata,
 				containsInAnyOrder(moduleOptionNamed("dir"), moduleOptionNamed("host"), moduleOptionNamed("collection"),
-						moduleOptionNamed("port")));
+						moduleOptionNamed("port"),moduleOptionNamed("pattern"),moduleOptionNamed("mode")));
 
 		for (ModuleOption moduleOption : metadata) {
 			if (moduleOption.getName().equals("collection")) {
@@ -59,8 +59,11 @@ public class ModuleOptionsTest {
 			if (moduleOption.getName().equals("port")) {
 				assertEquals("6379", moduleOption.getDefaultValue());
 			}
-			if (moduleOption.getName().equals("host")) {
-				assertEquals("localhost", moduleOption.getDefaultValue());
+			if (moduleOption.getName().equals("pattern")) {
+				assertEquals("*.*", moduleOption.getDefaultValue());
+			}
+			if (moduleOption.getName().equals("mode")) {
+				assertEquals("line", moduleOption.getDefaultValue());
 			}
 		}
 	}

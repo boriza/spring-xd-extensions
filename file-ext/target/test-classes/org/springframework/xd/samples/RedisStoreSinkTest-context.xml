@@ -16,6 +16,8 @@
 		<prop key="host">localhost</prop>
 		<prop key="port">6379</prop>
 		<prop key="dir">/tmp/fileExt</prop>
+		<prop key="pattern">*.*</prop>
+		<prop key="mode">line</prop>
 	</util:properties>
 
 	<import resource="classpath:config/spring-module.xml"/>

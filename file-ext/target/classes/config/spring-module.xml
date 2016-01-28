@@ -28,7 +28,7 @@
 
 	<bean id="acceptOnceFilter" class="org.springframework.integration.file.filters.FileSystemPersistentAcceptOnceFileListFilter">
 	   <constructor-arg ref="redisMetadataStore"/>
-	   <constructor-arg value="*.*"/>
+	   <constructor-arg value="${pattern}"/>
 	</bean>
 	
 	<int-file:inbound-channel-adapter id="fileInAdapter"
@@ -37,9 +37,10 @@
 									 filter="acceptOnceFilter"
 									 auto-startup="false" 
 									   >
-		<int:poller default="true" fixed-delay="1000"/>
-		
+		<int:poller default="true" fixed-rate="100" />		
 	</int-file:inbound-channel-adapter>
+
+	<int-file:file-to-string-transformer input-channel="fileInAdapter" output-channel="output"/>
 
 	<int:channel id="output"/>          
 
