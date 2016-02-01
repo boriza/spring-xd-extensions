@@ -46,13 +46,10 @@ public class ModuleOptionsTest {
 
 		assertThat(
 				metadata,
-				containsInAnyOrder(moduleOptionNamed("dir"), moduleOptionNamed("host"), moduleOptionNamed("collection"),
-						moduleOptionNamed("port"),moduleOptionNamed("pattern"),moduleOptionNamed("mode")));
+				containsInAnyOrder(moduleOptionNamed("dir"), moduleOptionNamed("host"),
+						moduleOptionNamed("port"),moduleOptionNamed("pattern")));
 
 		for (ModuleOption moduleOption : metadata) {
-			if (moduleOption.getName().equals("collection")) {
-				assertEquals("${xd.stream.name}", moduleOption.getDefaultValue());
-			}
 			if (moduleOption.getName().equals("dir")) {
 				assertEquals("/tmp/fileExt", moduleOption.getDefaultValue());
 			}
@@ -62,8 +59,8 @@ public class ModuleOptionsTest {
 			if (moduleOption.getName().equals("pattern")) {
 				assertEquals("*.json", moduleOption.getDefaultValue());
 			}
-			if (moduleOption.getName().equals("mode")) {
-				assertEquals("line", moduleOption.getDefaultValue());
+			if (moduleOption.getName().equals("host")) {
+				assertEquals("localhost", moduleOption.getDefaultValue());
 			}
 		}
 	}

@@ -5,6 +5,7 @@
 	   xmlns:int-file="http://www.springframework.org/schema/integration/file"
 	   xmlns:int-redis="http://www.springframework.org/schema/integration/redis"
 	   xmlns:task="http://www.springframework.org/schema/task"
+	   xmlns:util="http://www.springframework.org/schema/util"
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/integration
@@ -14,6 +15,7 @@
 		http://www.springframework.org/schema/integration/file
 		http://www.springframework.org/schema/integration/file/spring-integration-file.xsd
 		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
 		">
 
 	<bean id="redisConnectionFactory" 
