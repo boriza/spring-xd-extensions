@@ -47,7 +47,8 @@ public class ModuleOptionsTest {
 		assertThat(
 				metadata,
 				containsInAnyOrder(moduleOptionNamed("dir"), moduleOptionNamed("host"),
-						moduleOptionNamed("port"),moduleOptionNamed("pattern")));
+						moduleOptionNamed("port"),moduleOptionNamed("pattern"),moduleOptionNamed("mode"),
+						moduleOptionNamed("withMarkers")));
 
 		for (ModuleOption moduleOption : metadata) {
 			if (moduleOption.getName().equals("dir")) {
